@@ -15,7 +15,10 @@ namespace WAAD.POC.ProductCatalog.Backend.Controllers
         // POST api/notification
         public async Task<HttpResponseMessage> Get([FromUri]string message)
         {
+            // below format is used for only plain message.
             //string payloadMessage = String.Format(@"<toast><visual><binding template=""ToastText01""><text id=""1"">{0}</text></binding></visual></toast>", message);
+
+            // below format is used for toast with action buttons.
             string payloadMessage = String.Format(@"<toast launch=""1""><visual><binding template=""ToastGeneric""> 
                                                   <text id=""1"">Dear customer, Get {0} if you come visit us today ! Best Regards from our team.</text> 
                                                   </binding></visual> 
